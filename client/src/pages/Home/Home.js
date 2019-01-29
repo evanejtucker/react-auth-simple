@@ -28,10 +28,6 @@ class Home extends Component {
     });
   }
 
-  getNewJoke = () => {
-    this.getJoke()
-  }
-
   loggedIn = () => {
     API.isLoggedIn().then(user => {
       if (user.data.loggedIn) {
@@ -49,7 +45,7 @@ class Home extends Component {
       <div className="homeBox">
         <Joke joke={this.state.joke}/>
         {this.state.loggedIn ? (
-          <Button onClick={e=> {this.geJoke()}} color="warning" block>Get New Joke</Button>
+          <Button onClick={e=> {this.getJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}
       </div>
     );
