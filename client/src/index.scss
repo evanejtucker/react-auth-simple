@@ -1,0 +1,17 @@
+
+@import "./sass/variable.scss";
+
+html body {
+    background: $background-color;
+}
+
+.notFound {
+    margin-top: 75px;
+    text-align: center;
+
+    img {
+        height: 250px;
+        width: 300px;
+        margin-top: 25px;
+    }
+}
