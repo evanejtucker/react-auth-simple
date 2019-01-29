@@ -8,11 +8,7 @@ class Signup extends Component {
         validPassword: false,
         confirmPassword: false
     }
-
-    componentDidMount() {
-        console.log(this.props);
-    }
-
+    
     componentDidUpdate() {
         this.validatePassword();
         this.confirmPassword();

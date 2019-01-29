@@ -19,7 +19,7 @@ class Home extends Component {
 
   getJoke = () => {
     API.ChuckNorris().then(joke => {
-      let newJoke = joke.data.value.joke.replace(/&quot;/g, "'");
+      let newJoke = joke.data.value.joke.replace(/&quot;/g, '"');
       this.setState({
         joke: newJoke
       })
@@ -49,7 +49,7 @@ class Home extends Component {
       <div className="homeBox">
         <Joke joke={this.state.joke}/>
         {this.state.loggedIn ? (
-          <Button onClick={e=> {this.getNewJoke()}} color="warning" block>Get New Joke</Button>
+          <Button onClick={e=> {this.geJoke()}} color="warning" block>Get New Joke</Button>
         ) : (<></>)}
       </div>
     );

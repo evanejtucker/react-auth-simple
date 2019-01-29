@@ -15,10 +15,6 @@ class Auth extends Component {
     message: ""
   }
 
-  componentDidMount() {
-    console.log(this.props.action);
-  }
-
   handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
@@ -29,7 +25,6 @@ class Auth extends Component {
 
   handleLogin = event => {
     event.preventDefault();
-    console.log(this.state);
     if (this.state.username && this.state.password) {
       API.login({
         username: this.state.username,
@@ -55,7 +50,6 @@ class Auth extends Component {
 
   handleSignup = event => {
     event.preventDefault();
-    console.log(this.state)
     if (this.state.username && this.state.password) {
       API.signup({
         username: this.state.username,
