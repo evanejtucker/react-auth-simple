@@ -10,6 +10,7 @@ class Auth extends Component {
     loggedIn: false,
     username: "",
     password: "",
+    confirmPassword: "",
     user: null,
     message: ""
   }
@@ -42,14 +43,36 @@ class Auth extends Component {
           });
           console.log("log in successful");
           window.location.href = '/profile';
-        } 
-        // else {
-        //   console.log("Something went wrong :(")
-        //   console.log(user);
-        // }
+        }
         else if (user.data.message) {
           this.setState({
             message: user.data.message
+          })
+        }
+      });
+    }
+  }
+
+  handleSignup = event => {
+    event.preventDefault();
+    console.log(this.state)
+    if (this.state.username && this.state.password) {
+      API.signup({
+        username: this.state.username,
+        password: this.state.password
+      }).then(user => {
+        if (user.data.loggedIn) {
+          this.setState({
+            loggedIn: true,
+            user: user.data.user
+          });
+          console.log("log in successful");
+          window.location.href = '/profile';
+        } else {
+          console.log("something went wrong :(")
+          console.log(user.data);
+          this.setState({
+            message: user.data
           })
         }
       });
@@ -68,7 +91,14 @@ class Auth extends Component {
             message={this.state.message}
           />
         ) : (
-            <h1>signup page</h1>
+            <Signup
+              username={this.state.username}
+              password={this.state.password}
+              confirmPassword={this.state.confirmPassword}
+              handleSignup={this.handleSignup}
+              handleInputChange={this.handleInputChange}
+              message={this.state.message}
+            />
           )}
       </div>
     )

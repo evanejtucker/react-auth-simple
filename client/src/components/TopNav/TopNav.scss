@@ -1,6 +1,26 @@
 @import "../../sass/variable.scss";
 
 .navbar {
-    background: #FF6347;
+    background: $primary-color;
+    box-shadow: 0 3px 10px $dark-text;
+    font-family: $text-font;
+
+    a.titleFont {
+        font-family: $title-font;
+        color: $light-text;
+    }
+
+    a.titleFont:hover {
+        color: $light-text;
+        font-weight: bold;
+    }
+
+    a.nav-link {
+        font-size: 1.2em;
+    }
+
+    .light-text {
+        color: $light-text
+    }
 }
 

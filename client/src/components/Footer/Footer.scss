@@ -1,0 +1,44 @@
+@import "../../sass/variable.scss";
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;;
+    bottom: -30px;
+    height: $footer-height;
+    background: $primary-color;
+    box-shadow: 1px 7px 3px 8px $dark-text;
+    font-family: $text-font;
+    color: $light-text;
+    p {
+        line-height: $footer-height;
+        width: 33%;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .gh-icon {
+        color: $light-text;
+        font-size: 1.3em;
+    }
+
+    .react-icon {
+        font-size: 1.3em;
+        -webkit-animation:spin 25s linear infinite;
+        -moz-animation:spin 25s linear infinite;
+        animation:spin 25s linear infinite;
+    }
+
+
+}
+
+// #reactLogo {
+//     -webkit-animation:spin 10s linear infinite;
+//     -moz-animation:spin 10s linear infinite;
+//     animation:spin 10s linear infinite;
+// }
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

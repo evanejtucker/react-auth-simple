@@ -56,16 +56,16 @@ export default class Navigation extends Component {
         return (
             <div>
                 <Navbar className="navbar" light expand="md">
-                    <NavbarBrand href="/">React Auth</NavbarBrand>
+                    <NavbarBrand href="/" className="titleFont">React Auth</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/"><i className="fas fa-home"></i></NavLink>
+                                <NavLink href="/"><i className="fas fa-home light-text"></i></NavLink>
                             </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
-                                    <i className="fas fa-user"></i>
+                                    <i className="fas fa-user light-text"></i>
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                     {this.state.loggedIn ? (

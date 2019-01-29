@@ -1,8 +1,11 @@
 
 @import "./sass/variable.scss";
 
-html body {
+html, body {
     background: $background-color;
+    height: 100%;
+    margin: 0;
+    position: relative;
 }
 
 .notFound {
