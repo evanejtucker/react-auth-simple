@@ -19,9 +19,9 @@ class Home extends Component {
 
   getJoke = () => {
     API.ChuckNorris().then(joke => {
-      console.log(joke.data.value.joke);
+      let newJoke = joke.data.value.joke.replace(/&quot;/g, "'");
       this.setState({
-        joke: joke.data.value.joke
+        joke: newJoke
       })
     }).catch(err => {
       console.log(err)
@@ -29,7 +29,6 @@ class Home extends Component {
   }
 
   getNewJoke = () => {
-    // e.preventDefault();
     this.getJoke()
   }
 
