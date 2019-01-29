@@ -1,7 +1,7 @@
 # react-auth
 react app with passport authentication
 
-[Check out the app here](https://calm-escarpment-33185.herokuapp.com/)
+[Check out the app here](https://react-auth-simple.herokuapp.com/)
 
 ## Requirements
 * mongoDB
