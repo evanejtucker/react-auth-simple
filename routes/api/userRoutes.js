@@ -3,7 +3,7 @@ const passport = require("../../config/passport");
 const db = require("../../models");
 const authMiddleware = require("../../config/middleware/authMiddleware");
 
-
+// /api/users/login
 // route to login the user
 router.post("/login", passport.authenticate("local", {
   failureRedirect: "/api/users/unauthorized",
@@ -16,6 +16,7 @@ router.post("/login", passport.authenticate("local", {
   });
 });
 
+// /api/users/signup
 // route to logout the user
 router.post("/signup", function(req, res, next) {
   db.User.findOne({username: req.body.username}, function(err, user) {
@@ -49,7 +50,8 @@ router.get("/unauthorized", function(req, res, next) {
   
   setTimeout(function() {
     res.json({
-      message: message
+      message: message,
+      loggedIn: false
     });
   }, 100);
     
