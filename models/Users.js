@@ -13,7 +13,10 @@ const usersSchema = new Schema({
       unique: false,
       validate: {
         validator: function(v) {
-          return /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v);
+          //min 4 characters, one letter, one number, 4 digits
+          return /(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,})/.text(v);
+          //original, i think it's lower, upper letters, number, and 8 digits
+          // return /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v);
         },
         message: props => `${props.value} is not a valid password`
       },
