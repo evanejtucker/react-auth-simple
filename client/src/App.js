@@ -11,7 +11,7 @@ import { Container } from 'reactstrap';
 function App() {
   return (
       <Router>
-        <div>
+        <>
           <TopNav />
           <Container>
             <Switch>
@@ -23,7 +23,7 @@ function App() {
             </Switch>
           </Container>
           <Footer />
-        </div>
+        </>
       </Router>
   );
 }
