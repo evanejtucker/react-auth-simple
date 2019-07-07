@@ -54,8 +54,6 @@ router.get("/unauthorized", function(req, res, next) {
       loggedIn: false
     });
   }, 100);
-    
-  
 });
 
 // /api/users/profile
@@ -73,12 +71,20 @@ router.get("/logout", authMiddleware.logoutUser, function(req, res, next) {
   res.json("User logged out successfully");
 });
 
-
+// /api/users/admin
 // route to check if the logged in user is flagged as an administer
 router.get("/admin", authMiddleware.isAdmin, function(req, res, next) {
   res.json({
     user: req.user,
     loggedIn: true
+  });
+});
+
+router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
+  db.User.findByIdAndUpdate(req.user._id).populate('todos').then((user) => {
+    res.json(user);
+  }).catch((err) => {
+    res.json(err);
   });
 });
 
