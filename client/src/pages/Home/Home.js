@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import API from "../../utils/API";
 import Joke from "../../components/Joke"
